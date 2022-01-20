@@ -8,7 +8,7 @@ public class Interact : MonoBehaviour
 
 
     public bool desk;
-    public GameObject timerUI;
+    public GameObject UI;
 
     public bool noticeBoard;
     public bool homePC;
@@ -29,7 +29,21 @@ public class Interact : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.E) && activateDialog && desk==true)
         {
-            timerUI.SetActive(true);
+            UI.SetActive(true);
+            dialogBox.SetActive(false);
+
+        }
+
+        if (Input.GetKey(KeyCode.E) && activateDialog && noticeBoard == true)
+        {
+            UI.SetActive(true);
+            dialogBox.SetActive(false);
+
+        }
+
+        if (Input.GetKey(KeyCode.E) && activateDialog && homePC == true)
+        {
+            UI.SetActive(true);
             dialogBox.SetActive(false);
 
         }
