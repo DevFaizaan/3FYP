@@ -9,13 +9,17 @@ public class objectChecklist : MonoBehaviour
     public string description;
     public int index;
 
-    private Text itemText;
+    public Text itemText;
+    public Text itemDescText;
 
     
     private void Start()
     {
-        itemText = GetComponentInChildren<Text>();
+        //itemText = GetComponentInChildren<Text>();
         itemText.text = objName;
+
+        //itemDescText = GetComponentInChildren<Text>();
+        itemDescText.text = description;
     }
 
     public void SetObjectInfo(string name, string description, int index)

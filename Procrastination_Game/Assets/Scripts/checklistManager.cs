@@ -9,6 +9,7 @@ public class checklistManager : MonoBehaviour
 
     public Transform content;
     public GameObject addTaskPanel;
+    public GameObject taskBreakdownPanel;
     public Button createButton;
     public GameObject prefabItemChecklist;
 
@@ -56,8 +57,19 @@ public class checklistManager : MonoBehaviour
                 addTaskPanel.SetActive(true);
                 break;
 
+           case 2:
+                taskBreakdownPanel.SetActive(false);
+                break;
+
+
+
+        
+        
+        
         }
     }
+
+
 
 
     void CreateChecklistItem(string name, string description, int loadIndex =0 , bool loading = false)
