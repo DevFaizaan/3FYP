@@ -579,7 +579,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6562607595833071644, guid: 590439940f37b28429b801ae43a3dd78, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 152
       objectReference: {fileID: 0}
     - target: {fileID: 6562607596324653844, guid: 590439940f37b28429b801ae43a3dd78, type: 3}
       propertyPath: m_Pivot.x
@@ -669,13 +669,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: WindowSettings
       objectReference: {fileID: 0}
+    - target: {fileID: 6562607596324653845, guid: 590439940f37b28429b801ae43a3dd78, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6562607596792812651, guid: 590439940f37b28429b801ae43a3dd78, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6562607596792812651, guid: 590439940f37b28429b801ae43a3dd78, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6562607596792812651, guid: 590439940f37b28429b801ae43a3dd78, type: 3}
       propertyPath: m_AnchorMin.x
@@ -687,7 +691,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6562607597323404900, guid: 590439940f37b28429b801ae43a3dd78, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 590439940f37b28429b801ae43a3dd78, type: 3}

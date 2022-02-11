@@ -7,7 +7,7 @@ public class playerManager : MonoBehaviour
 
     public GameObject[] characterPrefabs;
     int characterIndex;
-    public static Vector2 lastPos = new Vector2(-3, 0);
+    public static Vector2 lastPos = new Vector2(0, 0);
 
     public void Awake()
     {
