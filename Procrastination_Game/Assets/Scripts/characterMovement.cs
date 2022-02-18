@@ -9,6 +9,7 @@ public class characterMovement : MonoBehaviour
     public Rigidbody2D myRB;
     private Vector2 characterMove;
     public Animator myAnim;
+    
 
     // Start is called before the first frame update
     void Start()

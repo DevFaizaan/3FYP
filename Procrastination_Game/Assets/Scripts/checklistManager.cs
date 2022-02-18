@@ -104,6 +104,7 @@ public class checklistManager : MonoBehaviour
     {
         objChecklist.Remove(item);
         SaveJSONData();
+        coinManager.coinManagerInstance.changeCoin(25);
         Destroy(item.gameObject);
     }
 
