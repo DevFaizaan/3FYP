@@ -21,6 +21,7 @@ public class coinManager : MonoBehaviour
         if (PlayerPrefs.HasKey("currentCoin"))
         {
             coinAmount = PlayerPrefs.GetInt("currentCoin");
+            Debug.Log("Current coin amount: " + coinAmount);
         }
         else
         {
@@ -43,7 +44,8 @@ public class coinManager : MonoBehaviour
         coinAmount += value;
         coinText.text = coinAmount.ToString();
         PlayerPrefs.SetInt("currentCoin", coinAmount);
-
+        PlayerPrefs.Save();
+        Debug.Log("New coin amount: " + coinAmount);
 
     }
 

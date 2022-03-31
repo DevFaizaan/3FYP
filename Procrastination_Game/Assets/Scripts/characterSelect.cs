@@ -16,6 +16,7 @@ public class characterSelect : MonoBehaviour
 
     private void Awake()
     {
+       
         characSelected = PlayerPrefs.GetInt("characSelected", 0);
         foreach( GameObject player in characSkins)
         {
@@ -117,6 +118,8 @@ public class characterSelect : MonoBehaviour
         PlayerPrefs.SetInt("characSelected", characSelected);
         gameCharacters[characSelected].isUnlocked = true;
         UpdateButtonUI();
+        Debug.Log("New Character " + gameCharacters[characSelected].characterName + " has been unlocked!");
+        Debug.Log("Coin amount after purchase " + 550);
     }
     // Start is called before the first frame update
     void Start()

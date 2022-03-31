@@ -18,15 +18,19 @@ public class AchievementManager : MonoBehaviour
         public int current;
         public int goal;
         public bool unlocked;
+
+        public string coins;
+        public string exp;
         //public bool hidden; //optional hidden attribute
     }
 
-    public GameObject achievementUnlockedNotif;
+   // public GameObject achievementUnlockedNotif;
     public GameObject achievementObj;
 
     public GameObject slider;
     public GameObject claim;
     public GameObject completed;
+
 
     [SerializeField]
     public Achievement[] achievements;
@@ -39,11 +43,12 @@ public class AchievementManager : MonoBehaviour
     void Start()
     {
         LoadAchievementData();
-        achievementUnlockedNotif = GameObject.Find("AchievementUnlocked");
+       // achievementUnlockedNotif = GameObject.Find("AchievementUnlocked");
     }
 
     public void AddAchievementProgress(string ID, int value)
     {
+        //gets the first element if it exists in the Achievement arrary
         Achievement achievement = achievements.FirstOrDefault(x => x.ID == ID);
 
         if (!achievement.unlocked)
@@ -54,11 +59,15 @@ public class AchievementManager : MonoBehaviour
             {
                 achievement.current = achievement.goal;
                 achievement.unlocked = true;
-                //ShowUnlockedTic(achievement);
+
+                //adds coins and exp for an achivement once reached
+                coinManager.coinManagerInstance.changeCoin(int.Parse(achievement.coins));
+                progressBar level = new progressBar();
+                level.addExperience(float.Parse(achievement.exp));
+
                 Debug.Log("Unlocked Achievement: " + achievement.display);
 
-                slider.SetActive(false);
-                claim.SetActive(true);
+              
             }
             SaveAchievementData(achievement.ID);
         }
@@ -96,9 +105,14 @@ public class AchievementManager : MonoBehaviour
             achProgBar.maxValue = achievement.goal;
             achProgBar.value = achievement.current;
 
-            
+            Text achievementCoins = achievementObject.transform.Find("RewardCoins").GetComponent<Text>();
+            achievementCoins.text = achievement.coins.ToString();
 
-           
+            Text achievementEXP = achievementObject.transform.Find("RewardEXP").GetComponent<Text>();
+            achievementEXP.text = achievement.exp.ToString();
+
+
+
         }
     }
 

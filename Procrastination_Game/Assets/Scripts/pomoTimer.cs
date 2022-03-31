@@ -57,6 +57,7 @@ public class pomoTimer : MonoBehaviour, IPointerClickHandler
                 stopButton.SetActive(true);
                 //continueButton.SetActive(true);
                 yield return new WaitForSeconds(1f);
+                Debug.Log("Timer has started!" + " Remaining time: " + remainingDuration);
             }
 
 
@@ -116,8 +117,12 @@ public class pomoTimer : MonoBehaviour, IPointerClickHandler
     }
     private void OnEnd()
     {
+        AchievementManager.achievementManagerInstance.AddAchievementProgress("Ach_01", 1);
+        AchievementManager.achievementManagerInstance.AddAchievementProgress("Ach_05", 1);
+        coinManager.coinManagerInstance.changeCoin(100);
+        progressBar level = new progressBar();
+        level.addExperience(100);
         //achievementManager.achievementManagerInstance.addAchievementProgress("tut", 1);
-        //End Time , if want Do something
         print("End");
     }
 

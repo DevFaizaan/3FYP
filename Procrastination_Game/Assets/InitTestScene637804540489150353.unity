@@ -435,6 +435,8 @@ MonoBehaviour:
     sceneBased: 0
     originalScene: Assets/Scenes/House.unity
     bootstrapScene: Assets/InitTestScene637804540489150353.unity
+    runInBackgroundValue: 0
+    consoleErrorPaused: 0
 --- !u!4 &1702078738
 Transform:
   m_ObjectHideFlags: 0

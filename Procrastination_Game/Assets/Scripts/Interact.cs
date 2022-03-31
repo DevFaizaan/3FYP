@@ -31,22 +31,32 @@ public class Interact : MonoBehaviour
         {
             UI.SetActive(true);
             dialogBox.SetActive(false);
-
+            addAchProg();
+           Debug.Log(UI + " has opened");
         }
 
         if (Input.GetKey(KeyCode.E) && activateDialog && noticeBoard == true)
         {
             UI.SetActive(true);
             dialogBox.SetActive(false);
-
+            addAchProg();
+           Debug.Log(UI + " has opened");
         }
 
         if (Input.GetKey(KeyCode.E) && activateDialog && homePC == true)
         {
             UI.SetActive(true);
             dialogBox.SetActive(false);
+            addAchProg();
+            Debug.Log(UI + " has opened");
+            Debug.Log("UiOpenSound has been played");
 
         }
+    }
+
+    public void addAchProg()
+    {
+        AchievementManager.achievementManagerInstance.AddAchievementProgress("Ach_02", 1);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -54,6 +64,8 @@ public class Interact : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Player in range");
+            Debug.Log("Achievement Progress has been updated");
+            Debug.Log("The player has quit the game!");
 
             activateDialog = true;
 

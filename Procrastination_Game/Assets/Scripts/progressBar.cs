@@ -111,20 +111,6 @@ public class progressBar : MonoBehaviour
         PlayerPrefs.SetInt("playerLevel", playerLevel);
     }
 
-    public void addExperienceScaling(float xp, int levelPassed)
-    {
-        if(levelPassed < playerLevel)
-        {
-            float xpMultiplier = 1 + (playerLevel - levelPassed) * 0.1f;
-            xpCurrent += xp * xpMultiplier;
-        }
-        else
-        {
-            xpCurrent += xp;
-        }
-        timerLerp = 0f;
-        timeDelay = 0f;
-    }
 
     public void playerLevelUp()
     {
@@ -134,13 +120,17 @@ public class progressBar : MonoBehaviour
         maskImg.fillAmount = 0f;
         xpCurrent = Mathf.RoundToInt(xpCurrent - xpRequired);
         xpRequired = requiredXpCalc();
+        AchievementManager.achievementManagerInstance.AddAchievementProgress("Ach_03", 1);
+        Debug.Log("test");
+        Debug.Log("Player has leveled up to Level: " + playerLevel);
+        Debug.Log("New Experience required " + (xpRequired - xpCurrent));
     }
     private int requiredXpCalc()
     {
         int solveRequiredXp = 0;
         for(int cyclingLevel = 1; cyclingLevel <= playerLevel; cyclingLevel++)
         {
-            solveRequiredXp += (int) Mathf.Floor(cyclingLevel + addtionXpMultiplier * Mathf.Pow(powerXpMultiplier, cyclingLevel / divsionXpMultiplier));
+            solveRequiredXp += (int) ((cyclingLevel + addtionXpMultiplier * Mathf.Pow(powerXpMultiplier, cyclingLevel / divsionXpMultiplier)))/10 *10;
         }
         return solveRequiredXp / 4;
     }

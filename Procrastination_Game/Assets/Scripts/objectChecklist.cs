@@ -5,12 +5,17 @@ using UnityEngine.UI;
 
 public class objectChecklist : MonoBehaviour
 {
+
+    //varaibles
     public string objName;
     public string description;
     public int index;
 
     public Text itemText;
     public Text itemDescText;
+
+    public Button confirmButton;
+    public Button deleteButton;
 
     
     private void Start()

@@ -14,9 +14,9 @@ public class ClickBtn : MonoBehaviour
         clickDisplay.text = clicks + " CLICKS";
 
         
-        AchievementManager.achievementManagerInstance.AddAchievementProgress("ok", 1);
-        AchievementManager.achievementManagerInstance.AddAchievementProgress("ok2", 1);
-        AchievementManager.achievementManagerInstance.AddAchievementProgress("clickyy", 1);
+       // AchievementManager.achievementManagerInstance.AddAchievementProgress("ok", 1);
+       // AchievementManager.achievementManagerInstance.AddAchievementProgress("ok2", 1);
+       // AchievementManager.achievementManagerInstance.AddAchievementProgress("clickyy", 1);
         coinManager.coinManagerInstance.changeCoin(100);
     }
 }
